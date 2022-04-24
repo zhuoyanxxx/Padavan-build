@@ -40,6 +40,8 @@ jobs:
       env:
         TNAME: K2P_nano
       run: |
+        cd /opt/rt-n56u/trunk/user/miniupnpd/
+        sed -i 's/ENABLE_IPV6:=0/ENABLE_IPV6:=1/g' Makefile
         cd /opt/rt-n56u/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
         echo "configs/templates/$TNAME.config not found "
